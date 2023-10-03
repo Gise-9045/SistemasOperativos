@@ -128,9 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleControl.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="InputSistem2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleControl.h" />
+    <ClInclude Include="InputManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
