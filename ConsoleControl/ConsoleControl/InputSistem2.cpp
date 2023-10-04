@@ -1,5 +1,7 @@
 #include<iostream>
 #include "ConsoleControl.h"
+#include "InputManager.h"
+
 
 
 void Ejemplos()
@@ -24,6 +26,14 @@ void LeerInputTeclas()
 
 int main()
 {
-	LeerInputTeclas(); 
+	//LeerInputTeclas(); 
 
+	InputManager* IManager = new InputManager(); 
+
+	IManager->StartListener(); 
+
+	while (true)
+	{
+		//SIRVE PARA NO CERRAR EL PROGRAMA
+	}
 }
