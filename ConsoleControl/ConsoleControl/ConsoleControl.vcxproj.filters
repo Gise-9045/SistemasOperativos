@@ -26,10 +26,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleControl.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

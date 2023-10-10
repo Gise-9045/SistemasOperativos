@@ -59,6 +59,29 @@ void InputManager::RealLoop()
 
 }
 
+void InputManager::SaveListener(KeyBinding* keybinding)
+{
+	_listenersMapMutex->lock();
+
+	KeyBindingListMap::iterator pair = _listenersMap->find(keybinding->keyCode);
+	std::list<KeyBinding*>* keyBindings = nullptr;
+
+
+	if (pair == _listenersMap->end()) // si lo busca y no lo encuentra
+	{
+		keyBindings = new std::list<KeyBinding*>();
+		_listenersMap->emplace(keybinding->keyCode, keyBindings); // .insert(make_pair(keyCode, keyBindings)); 
+	}
+	else
+	{
+		keyBindings = pair->second; //valor de la derecha del mapa 
+	}
+
+	keyBindings->push_back(keybinding);
+
+	_listenersMapMutex->unlock();
+}
+
 void InputManager::StopListener()
 {
 	_isStartedMutex->lock();  
@@ -71,26 +94,17 @@ void InputManager::StopListener()
 unsigned int InputManager::AddListener(int keyCode , KeyBinding::OnKeyPress onKeyPress)
 {
 	KeyBinding* binding = new KeyBinding(keyCode, onKeyPress); 
-	_listenersMapMutex->lock(); 
-
-	KeyBindingListMap::iterator pair = _listenersMap->find(keyCode); 
-	std::list<KeyBinding*>* keyBindings = nullptr; 
-
-	if (pair == _listenersMap->end()) // si lo busca y no lo encuentra
-	{
-		keyBindings = new std::list<KeyBinding*>(); 
-		_listenersMap->emplace(keyCode, keyBindings); // .insert(make_pair(keyCode, keyBindings)); 
-	}
-	else
-	{
-		keyBindings = pair->second; //valor de la derecha del mapa 
-	}
-
-	keyBindings->push_back(binding); 
-
-	_listenersMapMutex->unlock(); 
+	
+	SaveListener(binding); 
 
 	return binding->GetSubcriptionId();
+}
+
+unsigned int InputManager::AddListenerAsync(int keyCode, KeyBinding::OnKeyPress onKeyPress)
+{
+	KeyBinding* binding = new KeyBinding(keyCode, onKeyPress); 
+	std::thread* safeListenerThread = new std::thread(&InputManager::SaveListener, this, binding); 
+	return 0;
 }
 
 void InputManager::RemoveListener(unsigned int subscriptionId)
@@ -113,6 +127,13 @@ void InputManager::RemoveListener(unsigned int subscriptionId)
 	}
 	_listenersMapMutex->unlock();
 	
+}
+
+void InputManager::RemoveListenerAsync(unsigned int subscriptionId)
+{
+	std::thread* safeListenerThread = new std::thread(&InputManager::RemoveListener, this, subscriptionId);
+
+	safeListenerThread->detach();
 }
 
 // name space -> espacios para utilizar los nombres de cosas que sean propias de una libreria pero no queremos que detecte la funcion de las variables de esa libreria

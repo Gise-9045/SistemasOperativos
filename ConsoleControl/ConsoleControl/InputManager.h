@@ -41,6 +41,7 @@ private:
 	std::thread* _listenerThread; 
 
 	void RealLoop(); 
+	void SaveListener(KeyBinding* keybinding);
 
 public:
 	InputManager();
@@ -49,7 +50,9 @@ public:
 	void StartListener();
 	void StopListener();
 	unsigned int AddListener(int keyCode , KeyBinding::OnKeyPress onKeyPress); 
+	unsigned int AddListenerAsync(int keyCode, KeyBinding::OnKeyPress onKeyPress); 
 	void RemoveListener(unsigned int subscriptionId);
+	void RemoveListenerAsync(unsigned int subscriptionId);
 };
 
 
