@@ -44,6 +44,8 @@ public:
 	void StopListener();
 
 	unsigned int AddListener(int keyCode, KeyBinding::OnKeyPress onKeyPress);
+	unsigned int AddListenerAsync(int keyCode, KeyBinding::OnKeyPress onKeyPressed);
 	void RemoveListener(unsigned int subscriptionId);
-	unsigned int AddListenerAsync(int keyCode, unsigned long milisecondsTriggerDelay, KeyBinding::OnKeyPress onKeyPressed);
+	void RemoveListenerAsync(unsigned int subscriptionId);
+	
 };
