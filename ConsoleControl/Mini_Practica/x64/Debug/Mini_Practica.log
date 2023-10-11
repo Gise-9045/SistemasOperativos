@@ -1,0 +1,8 @@
+﻿  ConsoleControl.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\Mini_Practica\ConsoleControl.h(57,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  InputSystem.cpp
+  Main.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\Mini_Practica\ConsoleControl.h(57,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  TimerManager.cpp
+  Generating Code...
+  Mini_Practica.vcxproj -> C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\x64\Debug\Mini_Practica.exe
