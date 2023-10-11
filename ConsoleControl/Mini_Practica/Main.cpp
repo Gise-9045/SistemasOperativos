@@ -3,12 +3,6 @@
 #include"Timer.h"
 #include"QuestionManager.h"
 
-
-void Answer()
-{
-	std::cout << "aaaaa"; 
-}
-
 int main()
 {
 	Question* question = new Question("cuantos dedos hay?"); 

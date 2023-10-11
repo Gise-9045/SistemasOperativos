@@ -14,7 +14,8 @@ public:
 
 	void Draw()
 	{
-		std::cout << _question << std::endl; 
+		ConsoleControl::SetColor(ConsoleControl::BLUE);
+		std::cout  <<_question << std::endl; 
 	}
 
 	
