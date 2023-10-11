@@ -1,8 +1,5 @@
-﻿  ConsoleControl.cpp
-C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
-  InputManager.cpp
-C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
-  InputSistem2.cpp
-C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
-  Generating Code...
+﻿  LINK : C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\x64\Debug\ConsoleControl.exe not found or not built by the last incremental link; performing full link
+ConsoleControl.obj : warning LNK4099: PDB '' was not found with 'ConsoleControl.obj' or at ''; linking object as if no debug info
+InputManager.obj : warning LNK4099: PDB '' was not found with 'InputManager.obj' or at ''; linking object as if no debug info
+InputSistem2.obj : warning LNK4099: PDB '' was not found with 'InputSistem2.obj' or at ''; linking object as if no debug info
   ConsoleControl.vcxproj -> C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\x64\Debug\ConsoleControl.exe
