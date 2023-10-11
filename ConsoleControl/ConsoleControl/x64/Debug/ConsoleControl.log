@@ -1,70 +1,8 @@
-﻿  InputManager.cpp
+﻿  ConsoleControl.cpp
 C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): error C2661: 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair': no overloaded function takes 2 arguments
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(304,5): message : could be 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(std::piecewise_construct_t,std::tuple<_Types1...>,std::tuple<_Types2...>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(std::piecewise_construct_t,std::tuple<_Types1...>,std::tuple<_Types2...>)': expects 3 arguments - 2 provided
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(300,5): message : or       'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(_Tuple1 &,_Tuple2 &,std::integer_sequence<size_t,_Indices1...>,std::integer_sequence<size_t,_Indices2...>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(_Tuple1 &,_Tuple2 &,std::integer_sequence<size_t,_Indices1...>,std::integer_sequence<size_t,_Indices2...>)': expects 4 arguments - 2 provided
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(267,5): message : or       'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(std::pair<_Other1,_Other2> &&) noexcept(<expr>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(std::pair<_Other1,_Other2> &&) noexcept(<expr>)': expects 1 arguments - 2 provided
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(260,5): message : or       'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(const std::pair<_Other1,_Other2> &) noexcept(<expr>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(const std::pair<_Other1,_Other2> &) noexcept(<expr>)': expects 1 arguments - 2 provided
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(239,5): message : or       'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(_Other1 &&,_Other2 &&) noexcept(<expr>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(_Other1 &&,_Other2 &&) noexcept(<expr>)': could not deduce template argument for '__formal'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(228,5): message : or       'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(_Ty1 &,const _Ty2 &) noexcept(<expr>)'
-          with
-          [
-              _Ty1=const int,
-              _Ty2=std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,103): message : 'initializing': cannot convert from 'InputManager::KeyBinding *' to '_Ty1 &'
-          with
-          [
-              _Ty1=const int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,103): message : Reason: cannot convert from 'InputManager::KeyBinding *' to '_Ty1'
-          with
-          [
-              _Ty1=const int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,103): message : There is no context in which this conversion is possible
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(220,5): message : or       'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(void) noexcept(<expr>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : 'std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>::pair(void) noexcept(<expr>)': expects 0 arguments - 2 provided
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(719,82): message : while trying to match the argument list '(InputManager::KeyBinding *, std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xtree(807,25): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,InputManager::KeyBinding*&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>>*&>(_Alloc &,_Objty *const ,InputManager::KeyBinding *&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::_Tree_node<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>,std::_Default_allocator_traits<std::allocator<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>>::void_pointer>>,
-              _Ty=std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>,
-              _Objty=std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xtree(1011,46): message : see reference to function template instantiation 'std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<InputManager::KeyBinding*&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>>*&>(_Alnode &,std::_Tree_node<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,InputManager::KeyBinding *&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>,
-              _Alnode=std::allocator<std::_Tree_node<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>,std::_Default_allocator_traits<std::allocator<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>>::void_pointer>>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xtree(1033,30): message : see reference to function template instantiation 'std::pair<std::_Tree_node<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<InputManager::KeyBinding*&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>>*&>(InputManager::KeyBinding *&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>,
-              _Kty=int,
-              _Ty=std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *,
-              _Pr=std::less<int>
-          ]
-C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(69,16): message : see reference to function template instantiation 'std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<InputManager::KeyBinding*&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>>*&>(InputManager::KeyBinding *&,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *&)' being compiled
-          with
-          [
-              _Kty=int,
-              _Ty=std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *,
-              _Pr=std::less<int>,
-              _Alloc=std::allocator<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>
-          ]
-C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(69,25): message : see the first reference to 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace' in 'InputManager::SaveListener'
-          with
-          [
-              _Kty=int,
-              _Ty=std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *,
-              _Pr=std::less<int>,
-              _Alloc=std::allocator<std::pair<const int,std::list<InputManager::KeyBinding *,std::allocator<InputManager::KeyBinding *>> *>>
-          ]
+  InputManager.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  InputSistem2.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  Generating Code...
+  ConsoleControl.vcxproj -> C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\x64\Debug\ConsoleControl.exe
