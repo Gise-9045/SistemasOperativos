@@ -1,3 +1,12 @@
-﻿MSVCRTD.lib(exe_main.obj) : warning LNK4020: a type record in '' is corrupted; some symbols and types may not be accessible from the debugger
-MSVCRTD.lib(pdblkup.obj) : warning LNK4020: a type record in '' is corrupted; some symbols and types may not be accessible from the debugger
-ucrtd.lib(ucrtbased.dll) : fatal error LNK1103: debugging information corrupt; recompile module
+﻿  ConsoleControl.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  InputManager.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(118,38): error C2661: 'InputManager::KeyBinding::KeyBinding': no overloaded function takes 3 arguments
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(118,38): message : while trying to match the argument list '(int, unsigned long, InputManager::KeyBinding::OnKeyPress)'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(120,67): error C2589: ')': illegal token on right side of '::'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(120,53): error C2062: type 'unknown-type' unexpected
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\InputManager.cpp(121,1): error C2143: syntax error: missing ';' before '}'
+  InputSistem2.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  Generating Code...
