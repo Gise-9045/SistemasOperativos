@@ -1,3 +1,8 @@
-﻿  InputSistem2.cpp
-C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(57,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+﻿  ConsoleControl.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  InputManager.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  InputSistem2.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\ConsoleControl\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  Generating Code...
   ConsoleControl.vcxproj -> C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\x64\Debug\ConsoleControl.exe

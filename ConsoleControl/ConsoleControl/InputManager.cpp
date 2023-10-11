@@ -1,69 +1,88 @@
-
 #include "InputManager.h"
 #include "ConsoleControl.h"
-
 InputManager::InputManager()
 {
+
+
 
 }
 
 InputManager::~InputManager()
 {
+
+
 }
 
 void InputManager::StartListener()
 {
-	_isStartedMutex->lock(); 
-
-	if (_isStarted)
-	{
-		_isStartedMutex->unlock(); 
-		return; 
+	_isStartedMutex->lock();
+	if (_isStarted) {
+		_isStartedMutex->unlock();
+		return;
 	}
-
-	_isStarted = true; 
-	_isStartedMutex->unlock(); 
-
-	_listenerThread = new std::thread(&InputManager::RealLoop, this); 
-	_listenerThread->detach(); 
+	_isStarted = true;
+	_isStartedMutex->unlock();
+	_listenerThread = new std::thread(&InputManager::ReadLoop, this);
+	_listenerThread->detach();
 }
-
-void InputManager::RealLoop()
+void InputManager::ReadLoop()
 {
 	_isStartedMutex->lock();
-	bool isStarted = _isStarted;
+	bool isStarted = true;
 	_isStartedMutex->unlock();
-
-	while (isStarted)
+	while (_isStarted)
 	{
 		int keyCode = ConsoleControl::WaithForReadNextKey();
-
-		_listenersMapMutex->lock(); 
-		KeyBindingListMap::iterator pair = _listenersMap->find(keyCode);
-		if (pair != _listenersMap->end())
-		{
-			std::list<KeyBinding*>* keyBindings = pair->second; 
-
-			for (KeyBinding* keyBindings : *keyBindings)
-			{
-				keyBindings->onKeyPress(keyCode); 
+		//^Search in KeyBindings Map if pressed keycode exists
+		//if it does, call all lamda functions (functions with no name)
+		_listenersMapMutex->lock();
+		KeyBindingListsMap::iterator pair = _listenersMap->find(keyCode);
+		if (pair != _listenersMap->end()) {
+			std::list<KeyBinding*>* keyBindings = pair->second;
+			for (KeyBinding* keyBinding : *keyBindings) {
+				keyBinding->onKeyPress(keyCode);
 			}
 		}
-		
-		_listenersMapMutex->unlock(); 
-
+		_listenersMapMutex->unlock();
 		_isStartedMutex->lock();
-		isStarted = _isStarted; 
+		isStarted = _isStarted;
 		_isStartedMutex->unlock();
 	}
+}
+void InputManager::RemoveListener(unsigned int subscriptionId)
+{
+	_listenersMapMutex->lock();
+
+	for (std::pair<int, std::list<KeyBinding*>*> pair : *_listenersMap)
+	{
+		std::list<KeyBinding*>* keyBindigns = pair.second;  // optimización na más
+
+		for (KeyBinding* binding : *keyBindigns)
+		{
+			if (binding->GetSubscriptionId() == subscriptionId)
+			{
+				keyBindigns->remove(binding);
+				_listenersMapMutex->unlock();
+				return; //Early Exit
+			}
+		}
+	}
+	_listenersMapMutex->unlock();
 
 }
 
+// name space -> espacios para utilizar los nombres de cosas que sean propias de una libreria pero no queremos que detecte la funcion de las variables de esa libreria
+void InputManager::RemoveListenerAsync(unsigned int subscriptionId)
+{
+	std::thread* safeListenerThread = new std::thread(&InputManager::RemoveListener, this, subscriptionId);
+
+	safeListenerThread->detach();
+}
 void InputManager::SaveListener(KeyBinding* keybinding)
 {
 	_listenersMapMutex->lock();
 
-	KeyBindingListMap::iterator pair = _listenersMap->find(keybinding->keyCode);
+	KeyBindingListsMap::iterator pair = _listenersMap->find(keybinding->keyCode);
 	std::list<KeyBinding*>* keyBindings = nullptr;
 
 
@@ -81,85 +100,52 @@ void InputManager::SaveListener(KeyBinding* keybinding)
 
 	_listenersMapMutex->unlock();
 }
-
 void InputManager::StopListener()
 {
-	_isStartedMutex->lock();  
-	_isStarted = false; 
+	_isStartedMutex->lock();
+	_isStarted = false;
 	_isStartedMutex->unlock();
-
-	// el lock y el unlock tiene que estar separados lo minimo necesario para que no se pare el juego/codigo mucho tiempo
+	//lock y unlock deben estar separados lo minimo necesario 
+// para que no se pare el codigo del juego MUCHO RATO
 }
-
-unsigned int InputManager::AddListener(int keyCode , KeyBinding::OnKeyPress onKeyPress)
+unsigned int InputManager::AddListener(int keyCode, KeyBinding::OnKeyPress onKeyPress)
 {
-	KeyBinding* binding = new KeyBinding(keyCode, onKeyPress); 
-	
-	SaveListener(binding); 
+	KeyBinding* binding = new KeyBinding(keyCode, onKeyPress);
+	_listenersMapMutex->lock();
 
-	return binding->GetSubcriptionId();
+
+
+	_listenersMapMutex->unlock();
+	return binding->GetSubscriptionId();
 }
-
-unsigned int InputManager::AddListenerAsync(int keyCode, KeyBinding::OnKeyPress onKeyPress)
-{
-	KeyBinding* binding = new KeyBinding(keyCode, onKeyPress); 
-	std::thread* safeListenerThread = new std::thread(&InputManager::SaveListener, this, binding); 
+unsigned int InputManager::AddListenerAsync(int keyCode, unsigned long miliseconsTriggerDelay, KeyBinding::OnKeyPress onKeyPress) {
+	KeyBinding* binding = new KeyBinding(keyCode, onKeyPress);
+	std::thread* safeListenerThread = new std::thread(&InputManager::SaveListener, this, binding);
 	return 0;
 }
 
-void InputManager::RemoveListener(unsigned int subscriptionId)
-{
-	_listenersMapMutex->lock(); 
 
-	for (std::pair<int, std::list<KeyBinding*>*> pair : *_listenersMap)
-	{
-		std::list<KeyBinding*>* keyBindigns = pair.second;  // optimización na más
-		
-		for(KeyBinding* binding : *keyBindigns)
-		{
-			if (binding->GetSubcriptionId() == subscriptionId)
-			{
-				keyBindigns->remove(binding); 
-				_listenersMapMutex->unlock();
-				return; //Early Exit
-			}
-		}
-	}
-	_listenersMapMutex->unlock();
-	
-}
-
-void InputManager::RemoveListenerAsync(unsigned int subscriptionId)
-{
-	std::thread* safeListenerThread = new std::thread(&InputManager::RemoveListener, this, subscriptionId);
-
-	safeListenerThread->detach();
-}
-
-// name space -> espacios para utilizar los nombres de cosas que sean propias de una libreria pero no queremos que detecte la funcion de las variables de esa libreria
 
 InputManager::KeyBinding::KeyBinding(int keyCode, OnKeyPress onKeyPress)
 {
 	static std::mutex currentIdMutex;
-
-	currentIdMutex.lock(); 
-	static unsigned int currentId = 0;  // esta linea despues de la primera vez ya no funcionara más y se creara un espacio de memoria de currentId que se modificara siempre. 
-	this->_subscriptionId = currentId; 
-	currentId++; // en cada llamada se suma 1 al currentId ( 1,2,3,4...)
+	currentIdMutex.lock();
+	static unsigned int currentId = 0;
+	//^gracias a static currentId sera asignado a 0 la primera vez, 
+	// la siguiente vez que llame al constructor currentId 
+	// no se le asignara el valor 0 sino el que le quedo la ultima vez que se la llamo
+	subscriptionId = currentId;
+	currentId++;
 	currentIdMutex.unlock();
-
-	this->keyCode = keyCode; 
-	this->onKeyPress = onKeyPress; 
-
+	this->keyCode = keyCode;
+	this->onKeyPress = onKeyPress;
 }
 
 InputManager::KeyBinding::~KeyBinding()
 {
-
 }
 
-unsigned int InputManager::KeyBinding::GetSubcriptionId()
+unsigned int InputManager::KeyBinding::GetSubscriptionId()
 {
-	return _subscriptionId;
+	return subscriptionId;
 }
-

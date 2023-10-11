@@ -1,7 +1,6 @@
 #pragma once
 #include <mutex>
 #include <iostream>
-#include <mutex>
 
 #define KB_UP 72
 #define KB_DOWN 80
