@@ -4,18 +4,22 @@
 
 class Timer
 {
+private: 
+
+	std::thread* timeUse; 
+
 public:
+
+	Timer() {}; 
+
 	typedef std::function<void()> OnTimeElapsed; 
 	typedef std::function<bool()> OnTimeElapsedLoop;
 
-public: 
-	static void StartTimer(unsigned long timeRequiredMilisecons ,  OnTimeElapsed onTimeElapse)
+	static void StartTimer(unsigned long timeRequiredMilisecons, OnTimeElapsed onTimeElapse)
 	{
 
-		std::thread* thread = new std::thread([timeRequiredMilisecons, onTimeElapse]()
-		{
-				
-		}
+		ConsoleControl::Wait(2+timeRequiredMilisecons*1000*2); 
+		onTimeElapse(); 
 
 	}
 
