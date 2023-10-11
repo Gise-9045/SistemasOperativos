@@ -127,13 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\ConsoleControl\ConsoleControl.cpp" />
-    <ClCompile Include="..\ConsoleControl\InputManager.cpp" />
     <ClCompile Include="Mini_Practica.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\ConsoleControl\ConsoleControl.h" />
-    <ClInclude Include="..\ConsoleControl\InputManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
