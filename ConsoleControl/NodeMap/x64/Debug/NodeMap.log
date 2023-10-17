@@ -1,0 +1,11 @@
+﻿  ConsoleControl.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\ConsoleControl.h(56,2): warning C4091: 'static ': ignored on left of 'ConsoleControl' when no variable is declared
+  NodeMap.cpp
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\NodeMap.cpp(8,13): error C2248: 'Vector2::Vector2': cannot access private member declared in class 'Vector2'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\Vector2.h(7,2): message : see declaration of 'Vector2::Vector2'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\Vector2.h(2,7): message : see declaration of 'Vector2'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\NodeMap.cpp(8,18): error C2248: 'Vector2::Vector2': cannot access private member declared in class 'Vector2'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\Vector2.h(7,2): message : see declaration of 'Vector2::Vector2'
+C:\Users\GISELABENITOIZQUIERD\Desktop\SistemasOperativos\ConsoleControl\NodeMap\Vector2.h(2,7): message : see declaration of 'Vector2'
+  Vector2.cpp
+  Generating Code...
