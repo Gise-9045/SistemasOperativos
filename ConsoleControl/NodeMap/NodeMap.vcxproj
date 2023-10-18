@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="ConsoleControl.cpp" />
     <ClCompile Include="INodeContent.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Vector2.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="ConsoleControl.h" />
     <ClInclude Include="INodeContent.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Vector2.h" />

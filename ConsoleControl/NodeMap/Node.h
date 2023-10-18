@@ -14,6 +14,7 @@ public:
 
 	Node(Vector2 position);
 	INodeContent* GetContent(); 
+	Vector2 GetPosition(); 
 
 	template<typename T, typename = typename std::enable_if<std::is_base_of<INodeContent,T>::value>::type>
 	//se define SOLO SI cumple la condición de que tiene que estar basado en un INodeContent 
