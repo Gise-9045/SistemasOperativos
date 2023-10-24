@@ -51,6 +51,64 @@ void Map::SafePickNode(Vector2 position, SafePick safePickAction)
 	node->Unlock(); 
 }
 
+void Map::SafePickNodes(std::list<Vector2> positions, SafeMultiPick safeMultiPickAction)
+{
+	std::list<Node*>* nodes = new std::list<Node*>(); 
+
+	_sizeMutex->lock(); 
+	Vector2 size = _size; 
+	_sizeMutex->unlock();
+
+	for (Vector2 pos : positions)
+	{
+		if (pos.x >= size.x || pos.y >= size.y || pos.x < 0 || pos.y < 0)
+		{
+			//si hay una posicion invalida devuelve un valor nulo 
+
+			nodes->push_back(nullptr); 
+			continue;  // que es = dejar de ejecutar codigo siguiente y pasar al proximo valor de la grid , pos++
+		}
+
+		//esto con el CONTINUE no se ejecuta 
+
+		_gridMutex->lock(); 
+		Node* node = UnSafeGetNode(pos); 
+		_gridMutex->unlock(); 
+
+		nodes->push_back(node); 
+	}
+
+	_safeMultiPickMutex->lock(); 
+
+	for (Node* node : *nodes)
+	{
+		if (node != nullptr)
+			node->Lock();   // no bloquear más de una nodo a la vez 
+
+		//hasta que uno no acabe el otro no puede empezar porque esta bloqueado 
+	}
+
+	_safeMultiPickMutex->unlock(); 
+
+	safeMultiPickAction(nodes); 
+
+	for (Node* node : *nodes)
+	{
+		node->Unlock();   // no bloquear más de una nodo a la vez 
+
+		//hasta que uno no acabe el otro no puede empezar porque esta bloqueado 
+	}
+}
+
+Vector2 Map::GetOffset()
+{
+	_offsetMutex->lock(); 
+	Vector2 offset = _offset;
+	_offsetMutex->unlock(); 
+
+	return offset; 
+}
+
 Node* Map::UnSafeGetNode(Vector2 position) //ENCAPSULAR CODIGO
 {
 
