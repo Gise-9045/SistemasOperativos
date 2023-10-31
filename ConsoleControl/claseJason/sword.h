@@ -8,12 +8,9 @@ class Sword : public Weapon
 public: 
 	std :: string color = "";
 
-	Sword(std::string color) : color(color) 
-	{
-		damage = 2; type = SWORD;
-	};
+	Sword(std::string color);
 
-	Json::Value Encode();
+	Json::Value Encode() override;
 	static Sword* Decode(Json::Value json);
 
 };

@@ -40,6 +40,7 @@ void CreateBaseCharacter()
     //json["name"] = character->name; 
 
     json["Character"] = character->Encode(); 
+    
 
     std::ofstream jsonWriteFile = std::ofstream("Character.json", std::ofstream::binary); 
     

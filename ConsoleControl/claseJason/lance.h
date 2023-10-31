@@ -7,12 +7,9 @@ class Lance : public Weapon
 public: 
 	std::string woodType = ""; 
 
-	Lance(std::string woodType) : woodType(woodType) 
-	{ 
-		range = 2; type = LANCE;  
-	};
+	Lance(std::string woodType);
 
-	Json::Value Encode();
+	Json::Value Encode() override;
 	static Lance* Decode(Json::Value json);
 
 };
