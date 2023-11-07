@@ -7,13 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleControl", "ConsoleCo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mini_Practica", "Mini_Practica\Mini_Practica.vcxproj", "{A27F5BFE-8AA7-44C9-9C6D-A3CC2DDA272F}"
 EndProject
-<<<<<<< Updated upstream
-=======
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeMap", "NodeMap\NodeMap.vcxproj", "{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "claseJason", "claseJason\claseJason.vcxproj", "{6518DAF2-B073-4540-B935-7E328931288F}"
 EndProject
->>>>>>> Stashed changes
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeMapa", "NodeMap\NodeMapa.vcxproj", "{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -38,16 +35,6 @@ Global
 		{A27F5BFE-8AA7-44C9-9C6D-A3CC2DDA272F}.Release|x64.Build.0 = Release|x64
 		{A27F5BFE-8AA7-44C9-9C6D-A3CC2DDA272F}.Release|x86.ActiveCfg = Release|Win32
 		{A27F5BFE-8AA7-44C9-9C6D-A3CC2DDA272F}.Release|x86.Build.0 = Release|Win32
-<<<<<<< Updated upstream
-=======
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Debug|x64.ActiveCfg = Debug|x64
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Debug|x64.Build.0 = Debug|x64
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Debug|x86.ActiveCfg = Debug|Win32
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Debug|x86.Build.0 = Debug|Win32
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Release|x64.ActiveCfg = Release|x64
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Release|x64.Build.0 = Release|x64
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Release|x86.ActiveCfg = Release|Win32
-		{6F45C318-2C45-4354-9E1C-DF4F5EAA79FA}.Release|x86.Build.0 = Release|Win32
 		{6518DAF2-B073-4540-B935-7E328931288F}.Debug|x64.ActiveCfg = Debug|x64
 		{6518DAF2-B073-4540-B935-7E328931288F}.Debug|x64.Build.0 = Debug|x64
 		{6518DAF2-B073-4540-B935-7E328931288F}.Debug|x86.ActiveCfg = Debug|Win32
@@ -56,7 +43,14 @@ Global
 		{6518DAF2-B073-4540-B935-7E328931288F}.Release|x64.Build.0 = Release|x64
 		{6518DAF2-B073-4540-B935-7E328931288F}.Release|x86.ActiveCfg = Release|Win32
 		{6518DAF2-B073-4540-B935-7E328931288F}.Release|x86.Build.0 = Release|Win32
->>>>>>> Stashed changes
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Debug|x64.ActiveCfg = Debug|x64
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Debug|x64.Build.0 = Debug|x64
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Debug|x86.ActiveCfg = Debug|Win32
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Debug|x86.Build.0 = Debug|Win32
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Release|x64.ActiveCfg = Release|x64
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Release|x64.Build.0 = Release|x64
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Release|x86.ActiveCfg = Release|Win32
+		{46E8FD4E-FE56-4F2D-B45B-560527DEFF5F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
